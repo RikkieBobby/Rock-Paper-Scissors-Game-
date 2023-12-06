@@ -49,7 +49,7 @@ function playerInput() {
     messages.innerHTML = playerMessage;
 }
 
-// computer fucntions for the input and images
+// computer fucntions for the input and messages
 function computerMessages() {
 
     computerMessage = "The Computer is deciding...";
