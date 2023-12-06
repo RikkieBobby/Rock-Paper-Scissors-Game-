@@ -14,12 +14,16 @@ let roundCount
 
 buttons.forEach(button => button.addEventListener('click', (e) => {
     playerChoice = e.target.id;
+    disableButtons();
     playerInput();
     setTimeout(computerMessages, 2000);
     setTimeout(computerInput, 4000);
     setTimeout(generateResult, 6000);
     setTimeout(incrementRoundCounter, 6000);
-}));   
+    setTimeout(clearImages, 7000);
+}));
+
+
 
 function playerInput() {
 
@@ -98,6 +102,8 @@ function generateResult() {
         incrementComputerScore();
     }
 
+    enableButtons();
+
     messages.innerHTML = result;
 
 }
@@ -122,6 +128,11 @@ function incrementRoundCounter() {
     document.getElementById("round-count").innerText = ++roundCount;
 }
 
+function clearImages() {
+    document.getElementById("player-image").src = "assets/images/rps.jpg";
+    document.getElementById("computer-image").src = "assets/images/rps.jpg";
+}
+
 function displayPlayerRock() {
     document.getElementById("player-image").src = "assets/images/rock.png";
 }
@@ -144,4 +155,12 @@ function displayComputerPaper() {
 
 function displayComputerScissors() {
     document.getElementById("computer-image").src = "assets/images/computer-scissors.png";
+}
+
+function disableButtons() {
+    document.querySelectorAll("button.btn").forEach(button => button.disabled = true); 
+}
+
+function enableButtons() {
+    document.querySelectorAll("button.btn").forEach(button => button.disabled = false); 
 }
