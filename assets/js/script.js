@@ -46,17 +46,17 @@ function computerInput() {
     if (randomNumber === 1) {
         computerChoice = "Rock";
         messages.innerHTML = `The Computer chose ${computerChoice}`;
-        // displayComputerRock();
+        displayComputerRock();
     }
     if (randomNumber === 2) {
         computerChoice = "Paper";
         messages.innerHTML = `The Computer chose ${computerChoice}`;
-        // displayComputerPaper();
+        displayComputerPaper();
     }
     if (randomNumber === 3) {
         computerChoice = "Scissors";
         messages.innerHTML = `The Computer chose ${computerChoice}`;
-        // displayComputerScissors();
+        displayComputerScissors();
     }
 
 }
@@ -71,4 +71,16 @@ function displayPlayerPaper() {
 
 function displayPlayerScissors() {
     document.getElementById("player-image").src = "assets/images/scissors.png";
+}
+
+function displayComputerRock() {
+    document.getElementById("computer-image").src = "assets/images/computer-rock.png";
+}
+
+function displayComputerPaper() {
+    document.getElementById("computer-image").src = "assets/images/computer-paper.png";
+}
+
+function displayComputerScissors() {
+    document.getElementById("computer-image").src = "assets/images/computer-scissors.png";
 }
