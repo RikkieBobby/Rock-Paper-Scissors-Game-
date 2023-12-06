@@ -2,6 +2,7 @@ const buttons = document.querySelectorAll("button");
 const playerChoiceBox = document.getElementById("player-choice");
 const computerChoiceBox = document.getElementById("computer-choice");
 const messages = document.getElementById("game-info");
+let result;
 let playerChoice;
 let computerChoice;
 let playerMessage;
@@ -12,6 +13,7 @@ buttons.forEach(button => button.addEventListener('click', (e) => {
     playerInput();
     setTimeout(computerMessages, 2000);
     setTimeout(computerInput, 4000);
+    setTimeout(generateResult, 6000);
 }));
 
 function playerInput() {
@@ -58,6 +60,34 @@ function computerInput() {
         messages.innerHTML = `The Computer chose ${computerChoice}`;
         displayComputerScissors();
     }
+
+}
+
+function generateResult() {
+    if (computerChoice === playerChoice) {
+        result = "It's a Draw";
+    }
+    if (computerChoice === "Rock" && playerChoice === "Paper") {
+        result = "The Player Wins!";
+    }
+    if (computerChoice === "Rock" && playerChoice === "Scissors") {
+        result = "The Computer Wins!";
+    }
+    if (computerChoice === "Scissors" && playerChoice === "Rock") {
+        result = "The Player Wins!";
+    }
+    if (computerChoice === "Scissors" && playerChoice === "Paper") {
+        result = "The Computer Wins!";
+    }
+    if (computerChoice === "Paper" && playerChoice === "Scissors") {
+        result = "The Player Wins!";
+    }
+    if (computerChoice === "Paper" && playerChoice === "Rock") {
+        result = "The Computer Wins!";
+    }
+
+
+    messages.innerHTML = result;
 
 }
 
