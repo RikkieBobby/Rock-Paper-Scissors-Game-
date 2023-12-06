@@ -5,8 +5,12 @@ const messages = document.getElementById("game-info");
 let result;
 let playerChoice;
 let computerChoice;
+let playerScore;
+let computerScore;
 let playerMessage;
 let computerMessage;
+let drawCount
+let roundCount
 
 buttons.forEach(button => button.addEventListener('click', (e) => {
     playerChoice = e.target.id;
@@ -14,7 +18,8 @@ buttons.forEach(button => button.addEventListener('click', (e) => {
     setTimeout(computerMessages, 2000);
     setTimeout(computerInput, 4000);
     setTimeout(generateResult, 6000);
-}));
+    setTimeout(incrementRoundCounter, 6000);
+}));   
 
 function playerInput() {
 
@@ -66,29 +71,55 @@ function computerInput() {
 function generateResult() {
     if (computerChoice === playerChoice) {
         result = "It's a Draw";
+        incrementDrawCount();
     }
     if (computerChoice === "Rock" && playerChoice === "Paper") {
         result = "The Player Wins!";
+        incrementPlayerScore();
     }
     if (computerChoice === "Rock" && playerChoice === "Scissors") {
         result = "The Computer Wins!";
+        incrementComputerScore();
     }
     if (computerChoice === "Scissors" && playerChoice === "Rock") {
         result = "The Player Wins!";
+        incrementPlayerScore();
     }
     if (computerChoice === "Scissors" && playerChoice === "Paper") {
         result = "The Computer Wins!";
+        incrementComputerScore();
     }
     if (computerChoice === "Paper" && playerChoice === "Scissors") {
         result = "The Player Wins!";
+        incrementPlayerScore();
     }
     if (computerChoice === "Paper" && playerChoice === "Rock") {
         result = "The Computer Wins!";
+        incrementComputerScore();
     }
-
 
     messages.innerHTML = result;
 
+}
+
+function incrementPlayerScore() {
+    playerScore = parseInt(document.getElementById("player-count").innerText);
+    document.getElementById("player-count").innerText = ++playerScore;
+}
+
+function incrementComputerScore() {
+    computerScore = parseInt(document.getElementById("computer-count").innerText);
+    document.getElementById("computer-count").innerText = ++computerScore;
+}
+
+function incrementDrawCount() {
+    drawCount = parseInt(document.getElementById("draw-count").innerText);
+    document.getElementById("draw-count").innerText = ++drawCount;
+}
+
+function incrementRoundCounter() {
+    roundCount = parseInt(document.getElementById("round-count").innerText);
+    document.getElementById("round-count").innerText = ++roundCount;
 }
 
 function displayPlayerRock() {
