@@ -1,16 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Kablammo&family=Orbit&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel='shortcut icon' type='image/x-icon' href='RPSfavicon.png' />
-    <title>Rock-Paper-Scissors</title>
-</head>
-<body>
-    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Kablammo&family=Orbit&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel='shortcut icon' type='image/x-icon' href='RPSfavicon.png' />
+        <title>Rock-Paper-Scissors</title>
+    </head>
+    <body>
+        <div id="title-area">
+            <h1 id="main-heading">Rock Paper Scissors!</h1>
 
-    <script src="assets/js/script.js"></script>
-</body>
+            <br>
+
+            <p id="instructions">Choose from one of the 3 options below to play the game! Rock beats scissors, Scissors beats Paper, Paper beats Rock! Easy!</p>
+
+            <br>
+
+            <p id="game-info">Waiting for player to start...</p>
+        </div>
+
+        <br>
+
+        <div id="buttons">
+            <button class="btn btn-rock" id="Rock" aria-label="Rock">Rock</button>
+            <button class="btn btn-paper" id="Paper" aria-label="Paper">Paper</button>
+            <button class="btn btn-scissors" id="Scissors" aria-label="Scissors">Scissors</button>
+        </div>
+
+        <br>
+
+        <div id="game-area">
+            <div id="player-choice" aria-label="Players-Choice"><img id="player-image" src="assets/images/rps.jpg" alt="default image of rock paper scissors as placeholder"></div>
+            <div id="computer-choice" aria-label="Computers-Choice"><img id="computer-image" src="assets/images/rps.jpg" alt="default image of rock paper scissors as placeholder"></div>
+        </div>
+
+        <script src="assets/js/script.js"></script>
+    </body>
 </html>
