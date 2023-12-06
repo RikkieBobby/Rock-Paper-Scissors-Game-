@@ -14,16 +14,28 @@ function playerInput() {
 
     if (playerChoice === "Rock") {
         playerMessage = `You chose ${playerChoice}`;
-        // displayPlayerRock();
+        displayPlayerRock();
     }
     if (playerChoice === "Paper") {
         playerMessage = `You chose ${playerChoice}`;
-        // displayPlayerPaper();
+        displayPlayerPaper();
     }
     if (playerChoice === "Scissors") {
         playerMessage = `You chose ${playerChoice}`;
-        // displayPlayerScissors();
+        displayPlayerScissors();
     }
 
     messages.innerHTML = playerMessage;
+}
+
+function displayPlayerRock() {
+    document.getElementById("player-image").src = "assets/images/rock.png";
+}
+
+function displayPlayerPaper() {
+    document.getElementById("player-image").src = "assets/images/paper.png";
+}
+
+function displayPlayerScissors() {
+    document.getElementById("player-image").src = "assets/images/scissors.png";
 }
