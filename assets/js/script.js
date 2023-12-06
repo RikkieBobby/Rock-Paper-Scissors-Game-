@@ -12,6 +12,12 @@ let computerMessage;
 let drawCount
 let roundCount
 
+/*
+This is the main game function, when a button is pressed the other game functions
+are called. When a button is pressed, the other fucntions will execute in order 
+over the coure of seven seconds using the setTimeout in-bulit function. The buttons 
+are also disabled to prevent the player from over inputting.
+ */
 buttons.forEach(button => button.addEventListener('click', (e) => {
     playerChoice = e.target.id;
     disableButtons();
@@ -24,7 +30,7 @@ buttons.forEach(button => button.addEventListener('click', (e) => {
 }));
 
 
-
+// player input displaying a message and image
 function playerInput() {
 
     if (playerChoice === "Rock") {
@@ -43,6 +49,7 @@ function playerInput() {
     messages.innerHTML = playerMessage;
 }
 
+// computer fucntions for the input and images
 function computerMessages() {
 
     computerMessage = "The Computer is deciding...";
@@ -71,7 +78,11 @@ function computerInput() {
     }
 
 }
+// end
 
+/*calculates the player input against the computer and increments scores.
+Enables the buttons again
+*/
 function generateResult() {
     if (computerChoice === playerChoice) {
         result = "It's a Draw";
@@ -108,6 +119,7 @@ function generateResult() {
 
 }
 
+// score and round increment
 function incrementPlayerScore() {
     playerScore = parseInt(document.getElementById("player-count").innerText);
     document.getElementById("player-count").innerText = ++playerScore;
@@ -127,7 +139,9 @@ function incrementRoundCounter() {
     roundCount = parseInt(document.getElementById("round-count").innerText);
     document.getElementById("round-count").innerText = ++roundCount;
 }
+// end
 
+// functions to display and clear images
 function clearImages() {
     document.getElementById("player-image").src = "assets/images/rps.jpg";
     document.getElementById("computer-image").src = "assets/images/rps.jpg";
@@ -156,7 +170,9 @@ function displayComputerPaper() {
 function displayComputerScissors() {
     document.getElementById("computer-image").src = "assets/images/computer-scissors.png";
 }
+// end
 
+// fucntions to enable and disable buttons
 function disableButtons() {
     document.querySelectorAll("button.btn").forEach(button => button.disabled = true); 
 }
